@@ -1,4 +1,4 @@
-# Javascript Closures /play crickets
+# Javascript Closures :small_red_triangle_down:
 
 Closures are nothing but FUNCTIONS WITH PRESERVED DATA.
 
