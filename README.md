@@ -42,3 +42,30 @@ if you expand the scope and if you take a look at the closure, you can see the "
 
 If you consider how the addTO function executes, it will look the variables it needs. since passed is not define in inside it will take a look at the outside of the function. if it didn't find that at that scope it will go further, until it finds the value.
 If if cannot ind it will be undefined, if it find in any point then it will store in the memory.
+
+
+### lets take a look at a more advance example. 
+
+```javascript
+let addTo = function(outer) {
+    let add = (inner) =>{
+        return outer + inner
+    }
+    return add;
+}
+
+var addThree = new addTo(3)
+var addFour = new addTo(4)
+
+console.dir(addThree)
+console.dir(addFour)
+
+console.log(addThree(1))
+console.log(addFour(1))
+```
+
+In here there is 2 functions. one is a outer function and other one is a inner function. at the top of this i explained Closures are nothing but FUNCTIONS WITH PRESERVED DATA. So in here we created 2 functions with PRESERVED 3 and one with PRESERVED 4. you can see that by checking console.dir outputs. 
+
+![output in cmd](https://github.com/lakith/Javascript-Closures/blob/master/images/Capture2.PNG?raw=true )
+
+like this you can create as many as functions you want with Closures
